@@ -1,4 +1,4 @@
-package com.dreamland.aidldemo;
+package com.tsaiilin.aidldemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
+
+import com.dreamland.aidldemo.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             iMyTestAidlInterface = IMyTestAidlStub.asInterface(service);
             try {
                 String hhhhhhhhh = iMyTestAidlInterface.serverHello("hhhhhhhhh");
-                Log.d(TAG, "onServiceConnected: ");
+                Log.d(TAG, "onServiceConnected: " + hhhhhhhhh);
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
@@ -39,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Intent intent = new Intent();
-        intent.setAction("com.pm.service.MyService");
-        intent.setPackage("com.dreamland.server");
+        intent.setAction("com.tsaiilin.service.MyService");
+        intent.setPackage("com.tsaiilin.server");
         this.bindService(intent, connection, BIND_AUTO_CREATE);
 
     }

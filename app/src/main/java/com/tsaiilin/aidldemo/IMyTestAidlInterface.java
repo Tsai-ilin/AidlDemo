@@ -1,4 +1,4 @@
-package com.dreamland.aidldemo;
+package com.tsaiilin.aidldemo;
 
 import android.os.IInterface;
 import android.os.RemoteException;

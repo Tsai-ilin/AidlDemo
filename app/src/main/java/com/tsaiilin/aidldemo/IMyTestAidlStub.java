@@ -1,4 +1,4 @@
-package com.dreamland.aidldemo;
+package com.tsaiilin.aidldemo;
 
 import android.os.Binder;
 import android.os.IBinder;

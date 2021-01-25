@@ -1,9 +1,11 @@
-package com.dreamland.server;
+package com.tsaiilin.server;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.dreamland.server.R;
 
 public class MainActivity extends AppCompatActivity {
 

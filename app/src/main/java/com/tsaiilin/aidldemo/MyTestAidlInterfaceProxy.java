@@ -1,17 +1,17 @@
-package com.dreamland.server;
+package com.tsaiilin.aidldemo;
 
 import android.os.IBinder;
 import android.os.RemoteException;
 
 public class MyTestAidlInterfaceProxy implements IMyTestAidlInterface {
 
-    private static final java.lang.String DESCRIPTOR = "com.dreamland.server.Test";
+    private static final String DESCRIPTOR = "com.dreamland.server.Test";
     public static IMyTestAidlInterface sDefaultImpl;
 
 
     private IBinder mRemote;
 
-    public MyTestAidlInterfaceProxy(android.os.IBinder remote)
+    public MyTestAidlInterfaceProxy(IBinder remote)
     {
         mRemote = remote;
     }
@@ -31,14 +31,14 @@ public class MyTestAidlInterfaceProxy implements IMyTestAidlInterface {
     {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
-        java.lang.String _result;
+        String _result;
         try {
             _data.writeInterfaceToken(DESCRIPTOR);
             _data.writeString(hello);
             boolean _status = mRemote.transact(IMyTestAidlStub.TRANSACTION_serverHello, _data, _reply, 0);
-            if (!_status ) {
-                return sDefaultImpl.serverHello(hello);
-            }
+//            if (!_status ) {
+//                return sDefaultImpl.serverHello(hello);
+//            }
             _reply.readException();
             _result = _reply.readString();
         }
