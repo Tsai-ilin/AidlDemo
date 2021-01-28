@@ -15,7 +15,7 @@ public class MyService extends Service {
 
     private IMyTestAidlStub stub = new IMyTestAidlStub() {
         @Override
-        public String serverHello(String hello) throws RemoteException {
+        public String sayHello(String hello) throws RemoteException {
             Log.d(TAG, "serverHello: " + hello);
             return "Hello Client";
         }

@@ -27,7 +27,7 @@ public class MyTestAidlInterfaceProxy implements IMyTestAidlInterface {
         return mRemote;
     }
 
-    @Override public String serverHello(String hello) throws RemoteException
+    @Override public String sayHello(String hello) throws RemoteException
     {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -35,7 +35,7 @@ public class MyTestAidlInterfaceProxy implements IMyTestAidlInterface {
         try {
             _data.writeInterfaceToken(DESCRIPTOR);
             _data.writeString(hello);
-            boolean _status = mRemote.transact(IMyTestAidlStub.TRANSACTION_serverHello, _data, _reply, 0);
+            boolean _status = mRemote.transact(IMyTestAidlStub.TRANSACTION_sayHello, _data, _reply, 0);
 //            if (!_status ) {
 //                return sDefaultImpl.serverHello(hello);
 //            }

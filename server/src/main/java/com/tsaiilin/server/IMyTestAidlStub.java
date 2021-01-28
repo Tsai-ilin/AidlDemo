@@ -6,7 +6,7 @@ import android.os.IInterface;
 
 public abstract class IMyTestAidlStub extends Binder implements IMyTestAidlInterface {
     private static final java.lang.String DESCRIPTOR = "com.dreamland.server.Test";
-    static final int TRANSACTION_serverHello = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
+    static final int TRANSACTION_sayHello = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
 
 
     public IMyTestAidlStub() {
@@ -34,11 +34,11 @@ public abstract class IMyTestAidlStub extends Binder implements IMyTestAidlInter
                 reply.writeString(descriptor);
                 return true;
             }
-            case TRANSACTION_serverHello: {
+            case TRANSACTION_sayHello: {
                 data.enforceInterface(descriptor);
                 java.lang.String _arg0;
                 _arg0 = data.readString();
-                java.lang.String _result = this.serverHello(_arg0);
+                java.lang.String _result = this.sayHello(_arg0);
                 reply.writeNoException();
                 reply.writeString(_result);
                 return true;

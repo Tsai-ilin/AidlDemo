@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         public void onServiceConnected(ComponentName name, IBinder service) {
             iMyTestAidlInterface = IMyTestAidlStub.asInterface(service);
             try {
-                String hhhhhhhhh = iMyTestAidlInterface.serverHello("hhhhhhhhh");
+                String hhhhhhhhh = iMyTestAidlInterface.sayHello("hhhhhhhhh");
                 Log.d(TAG, "onServiceConnected: " + hhhhhhhhh);
             } catch (RemoteException e) {
                 e.printStackTrace();
